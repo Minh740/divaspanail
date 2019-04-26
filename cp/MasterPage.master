@@ -179,7 +179,7 @@
                     <span>Product</span></a>
             </li>
         
-                <li class="nav-item <%if (name.Contains("news"))
+                <li class="nav-item <%if (name.Contains("new"))
                 {%>active<%}%>">
                 <a class="nav-link" href="/cp/page/new/New.aspx">
                     <i class="far fa-newspaper"></i>

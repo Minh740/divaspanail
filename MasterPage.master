@@ -66,12 +66,15 @@
                                 {%>selected<% } %>">Home</a></li>
                         <li id="menu2"><a href="services" class="<% if (pageName == "services")
                                            {%>selected<% } %>">Services</a></li>
+
+                       
+
                         <li><a href="gallery" class="<% if (pageName == "gallery")
                                 {%>selected<% } %>">Gallery</a></li>
                        <%-- <li><a href="egift" class="<% if (pageName == "egift")
                                 {%>selected<% } %>">E-Gift</a></li>--%>
                         <li><a href="products" class="<% if (pageName == "products")
-                                {%>selected<% } %>">Products</a></li>
+                                {%>selected<%}%>">Products</a></li>
 
 
                        <%-- <li><a href="policy" class="<% if (pageName == "policy")
