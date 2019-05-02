@@ -30,6 +30,11 @@
                     <%=new2.NewsContent%>
                 </td>
                 <td class="text-center">
+
+                    <button class="btn btn-danger" id="btnSent_<%= new2.NewsID %>" onclick='sent(<%=new2.NewsID%>)'>
+                        Sent Notify
+                    </button>
+
                     <a class="btn btn-info" href="/cp-edit-new-<%=new2.NewsID%>" >
                         <i class="fa fa-edit" style="font-size: 15px"></i>
                     </a>
@@ -44,7 +49,11 @@
 
 
     <script>
-    
+    function sent(id) {
+            $("#btnSent_" + id).attr("disabled","disabled");
+            var ct = $("#ct_" + id).html();
+            $.get("http://divaspaapp.roofcode.com/api/send-notify-all.aspx?content="+ct, function () { });
+        }
          function Delete(input, id) {
             alertify.confirm("Are you sure Delete", function () {
                 $(input).prop("disabled", true);

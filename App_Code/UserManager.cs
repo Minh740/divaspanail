@@ -14,32 +14,32 @@ public class UserManager
         DB.SubmitChanges();
     }
 
-    public void Add(UserTBx ele)
+    public void Add(UsersTbx ele)
     {
-        DB.UserTBxes.InsertOnSubmit(ele);
+        DB.UsersTbxes.InsertOnSubmit(ele);
         DB.SubmitChanges();
     }
 
-    public UserTBx GetByID(int ID)
+    public UsersTbx GetByID(int ID)
     {
-        return DB.UserTBxes.FirstOrDefault(e => e.Status != -1 && e.ID == ID);
+        return DB.UsersTbxes.FirstOrDefault(e => e.Status != -1 && e.UserId == ID);
     }
 
 
-    public UserTBx GetByEmail(string email)
+    public UsersTbx GetByEmail(string email)
     {
-        return DB.UserTBxes.FirstOrDefault(e => e.Status != -1 && e.Email == email);
+        return DB.UsersTbxes.FirstOrDefault(e => e.Status != -1 && e.Email == email);
     }
 
 
-    public UserTBx GetByPhone(string phone)
+    public UsersTbx GetByPhone(string phone)
     {
-        return DB.UserTBxes.FirstOrDefault(e => e.Status != -1 && e.Phone == phone);
+        return DB.UsersTbxes.FirstOrDefault(e => e.Status != -1 && e.PhoneNumber == phone);
     }
 
-    public List<UserTBx> GetList()
+    public List<UsersTbx> GetList()
     {
-        return DB.UserTBxes.Where(e => e.Status != -1).ToList();
+        return DB.UsersTbxes.Where(e => e.Status != -1).ToList();
     }
 
     // get list user
