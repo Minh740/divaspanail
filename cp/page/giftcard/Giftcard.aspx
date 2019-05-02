@@ -49,9 +49,18 @@
                             <td><%=i.GiftCardCode %></td>
                             <td><%=i.CreateByUserId %></td>
                             <td>
-                                 <button class="btn btn-success" onclick="Edit(<%=i.GiftCardID%>)">Edit</button>
-                                 <button class="btn btn-danger" onclick="Delete(<%=i.GiftCardID%>)">Delete</button>
+                                 <a class="btn btn-info"  onclick="Edit(<%=i.GiftCardID%>)">
+                                     <i class="fa fa-edit" style="font-size: 15px; right: 10px"></i>
+                                 </a>
+                                 <button  class="btn"  onclick="Delete(<%=i.GiftCardID%>)">
+                                        <i class="fa fa-trash" style="font-size: 15px"></i>
+                                 </button>
                             </td>
+
+                             
+                    
+                         
+
                         </tr>
                         <% } %>
                     </tbody>
