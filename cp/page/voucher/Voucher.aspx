@@ -50,9 +50,7 @@
                             <td><%=list[i].VoucherMinCost%></td>
                             <td><%=list[i].VoucherDefaultCost%></td>
                             <td><%=list[i].VoucherCode%></td>
-                            <td><%=UM.GetByID(Convert.ToInt32(list[i].UserId))%> <br /> 
-                                <% try { pn = UM.GetByID(Convert.ToInt32(list[i].UserId)).PhoneNumber; } catch { } %>
-                                <%= pn %>
+                            <td><%=list[i].UserId%>
 
                             </td>
                             <td><%=list[i].VoucherAddedDate %></td>
@@ -65,7 +63,7 @@
                                 </a>
                             </td>
                         </tr>
-                        <% } %>
+                        <%}%>
                     </tbody>
                 </table>
             </div>
