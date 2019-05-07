@@ -143,6 +143,15 @@
                 </a>
             </li>
 
+        <!-- technician -->
+
+          <li class="nav-item <%if (name.Contains("technician"))
+                {%>active<%}%>">
+                <a class="nav-link" href="/cp/page/technician/Technician.aspx">
+                 <i class="fas fa-user-friends"></i>
+                    <span>Technician</span>
+                </a>
+            </li>
             <li class="nav-item <%if (name.Contains("slider"))
                 {%>active<%}%>">
                 <a class="nav-link" href="/cp-slider">

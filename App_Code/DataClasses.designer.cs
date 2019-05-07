@@ -24,8 +24,11 @@ using System.Reflection;
 [global::System.Data.Linq.Mapping.DatabaseAttribute(Name="DivaSpa1DBx")]
 public partial class DataClassesDataContext : System.Data.Linq.DataContext
 {
-	
-	private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
+    public DataClassesDataContext() : base(global::System.Configuration.ConfigurationManager.ConnectionStrings["DivaSpa1DBxConnectionString"].ConnectionString, mappingSource)
+    {
+        OnCreated();
+    }
+    private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
 	
   #region Extensibility Method Definitions
   partial void OnCreated();
@@ -107,12 +110,12 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
   partial void InsertServicesTBx(ServicesTBx instance);
   partial void UpdateServicesTBx(ServicesTBx instance);
   partial void DeleteServicesTBx(ServicesTBx instance);
-    #endregion
-    public DataClassesDataContext() : base(global::System.Configuration.ConfigurationManager.ConnectionStrings["DivaSpa1DBxConnectionString"].ConnectionString, mappingSource)
-    {
-        OnCreated();
-    }
-    public DataClassesDataContext(string connection) : 
+  partial void InsertTechnicianTBx(TechnicianTBx instance);
+  partial void UpdateTechnicianTBx(TechnicianTBx instance);
+  partial void DeleteTechnicianTBx(TechnicianTBx instance);
+  #endregion
+	
+	public DataClassesDataContext(string connection) : 
 			base(connection, mappingSource)
 	{
 		OnCreated();
@@ -341,6 +344,14 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<ServicesTBx>();
+		}
+	}
+	
+	public System.Data.Linq.Table<TechnicianTBx> TechnicianTBxes
+	{
+		get
+		{
+			return this.GetTable<TechnicianTBx>();
 		}
 	}
 }
@@ -6063,6 +6074,212 @@ public partial class ServicesTBx : INotifyPropertyChanging, INotifyPropertyChang
 					this._CategoryID = default(Nullable<int>);
 				}
 				this.SendPropertyChanged("CategoryTBx");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="roofcode.TechnicianTBx")]
+public partial class TechnicianTBx : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _Id;
+	
+	private string _Name;
+	
+	private string _Email;
+	
+	private string _Address;
+	
+	private string _Url;
+	
+	private string _Phone;
+	
+	private System.Nullable<int> _Status;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnAddressChanging(string value);
+    partial void OnAddressChanged();
+    partial void OnUrlChanging(string value);
+    partial void OnUrlChanged();
+    partial void OnPhoneChanging(string value);
+    partial void OnPhoneChanged();
+    partial void OnStatusChanging(System.Nullable<int> value);
+    partial void OnStatusChanged();
+    #endregion
+	
+	public TechnicianTBx()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int Id
+	{
+		get
+		{
+			return this._Id;
+		}
+		set
+		{
+			if ((this._Id != value))
+			{
+				this.OnIdChanging(value);
+				this.SendPropertyChanging();
+				this._Id = value;
+				this.SendPropertyChanged("Id");
+				this.OnIdChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50)")]
+	public string Name
+	{
+		get
+		{
+			return this._Name;
+		}
+		set
+		{
+			if ((this._Name != value))
+			{
+				this.OnNameChanging(value);
+				this.SendPropertyChanging();
+				this._Name = value;
+				this.SendPropertyChanged("Name");
+				this.OnNameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(100)")]
+	public string Email
+	{
+		get
+		{
+			return this._Email;
+		}
+		set
+		{
+			if ((this._Email != value))
+			{
+				this.OnEmailChanging(value);
+				this.SendPropertyChanging();
+				this._Email = value;
+				this.SendPropertyChanged("Email");
+				this.OnEmailChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(200)")]
+	public string Address
+	{
+		get
+		{
+			return this._Address;
+		}
+		set
+		{
+			if ((this._Address != value))
+			{
+				this.OnAddressChanging(value);
+				this.SendPropertyChanging();
+				this._Address = value;
+				this.SendPropertyChanged("Address");
+				this.OnAddressChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Url", DbType="NVarChar(200)")]
+	public string Url
+	{
+		get
+		{
+			return this._Url;
+		}
+		set
+		{
+			if ((this._Url != value))
+			{
+				this.OnUrlChanging(value);
+				this.SendPropertyChanging();
+				this._Url = value;
+				this.SendPropertyChanged("Url");
+				this.OnUrlChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="NVarChar(50)")]
+	public string Phone
+	{
+		get
+		{
+			return this._Phone;
+		}
+		set
+		{
+			if ((this._Phone != value))
+			{
+				this.OnPhoneChanging(value);
+				this.SendPropertyChanging();
+				this._Phone = value;
+				this.SendPropertyChanged("Phone");
+				this.OnPhoneChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int")]
+	public System.Nullable<int> Status
+	{
+		get
+		{
+			return this._Status;
+		}
+		set
+		{
+			if ((this._Status != value))
+			{
+				this.OnStatusChanging(value);
+				this.SendPropertyChanging();
+				this._Status = value;
+				this.SendPropertyChanged("Status");
+				this.OnStatusChanged();
 			}
 		}
 	}

@@ -48,18 +48,25 @@
 </div>
 <div id="result"></div>
 <script>
+   
     $("#btnLogin").click(function () {
-        $(this).prop("disabled", true);
 
-        $.ajax({
-            method: 'post',
-            url: '/cp/do/admin/login.aspx',
-            data: {
-                username: $("#txtEmail").val(),
-                password: $("#txtPassword").val()
-            },
-            success: function (data) {
-                $(this).prop("disabled", true);
+             var username = $("#txtEmail").val();
+             var password = $("#txtPassword").val();
+           
+             var data = {
+                 username: username,
+                 password: password,
+                 _token: $('meta[name="_token"]').attr('content'),
+             };
+
+             $.ajax({
+                 type: 'post',
+                 url:  '/cp/do/admin/login.aspx', //Here you will fetch records 
+                 data: data,
+
+                 success: function (data) {
+            
                 data = JSON.parse(data);
                 if (data.success == -1) {
                     console.log(data.error);
@@ -71,7 +78,7 @@
                 }
             },
             error: function (error) {
-                $(this).prop("disabled", true);
+               
                 console.log(error);
                 alert("Error. Please try again");
             }

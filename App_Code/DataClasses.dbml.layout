@@ -159,7 +159,7 @@
         <classShapeMoniker Id="a98603ed-9f78-4934-a4c3-f8e1ac162505" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.75 : 2.51044840494792); (9.5 : 2.51044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.75 : 2.51044840494792); (9.5 : 2.51044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataClassesDataContext/CategoryTBx/CategoryTBx_ImageCategoryTBx" />
       <nodes>
         <classShapeMoniker Id="a98603ed-9f78-4934-a4c3-f8e1ac162505" />
@@ -207,5 +207,11 @@
         <classShapeMoniker Id="472dcf1e-838f-46ed-a69f-11b04743f7e3" />
       </nodes>
     </associationConnector>
+    <classShape Id="46f633d4-2df5-4641-ac95-abc9f49a8af1" absoluteBounds="5.125, 0.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClassesDataContext/TechnicianTBx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1a130d46-0d5e-40f4-93d1-bb830caf16c6" absoluteBounds="5.14, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

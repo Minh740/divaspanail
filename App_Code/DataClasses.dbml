@@ -295,4 +295,15 @@
       <Association Name="CategoryTBx_ServicesTBx" Member="CategoryTBx" ThisKey="CategoryID" OtherKey="ID" Type="CategoryTBx" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="roofcode.TechnicianTBx" Member="TechnicianTBxes">
+    <Type Name="TechnicianTBx">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>
